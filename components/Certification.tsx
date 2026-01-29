@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface CertificationProps {
-  logo?: string;
+  logo?: string | StaticImageData;
   title: string;
   provider: string;
   date: string;
@@ -21,13 +21,13 @@ export function Certification({
   const content = (
     <div className="flex gap-4 w-full">
       {/* Logo */}
-      <div className="flex flex-col items-center w-7 shrink-0 pt-1">
+      <div className="flex flex-col items-center w-10 shrink-0 pt-1">
          {logo ? (
-          <div className="relative w-7 h-7 overflow-hidden bg-gray-100">
-             <Image src={logo} alt="Provider Logo" fill className="object-cover" />
+          <div className="relative w-10 h-10 overflow-hidden bg-white p-1">
+             <Image src={logo} alt="Provider Logo" fill className="object-contain" />
           </div>
         ) : (
-           <div className="w-7 h-7 bg-gray-200 rounded-none" />
+           <div className="w-10 h-10 bg-gray-200 rounded-none" />
         )}
       </div>
 

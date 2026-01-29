@@ -5,6 +5,13 @@ import { SkillPill } from "@/components/SkillPill";
 import { Certification } from "@/components/Certification";
 import { SocialLink } from "@/components/SocialLink";
 import { Divider } from "@/components/Divider";
+import { Project } from "@/components/Project";
+import { CVNavbar } from "@/components/CVNavbar";
+import profileImage from "@/assets/DSC0881.jpg";
+import chocoLogo from "@/assets/choco2.png";
+import enactusLogo from "@/assets/enacrus.png";
+import nfactorialLogo from "@/assets/nfact.png";
+import nisLogo from "@/assets/nis.png";
 
 export default function Home() {
   return (
@@ -16,10 +23,10 @@ export default function Home() {
           {/* Intro */}
           <Section className="pt-24 pb-8" gap="gap-6">
             <div className="flex gap-6 items-center">
-              <div className="relative w-[70px] h-[80px] shrink-0 rounded-[10px] overflow-hidden">
+              <div className="relative w-[90px] h-[100px] shrink-0 rounded-[10px] overflow-hidden">
                 <Image
-                  src="https://framerusercontent.com/images/kreJQL49X52hV3lm0eho5rR13jI.jpg"
-                  alt="Mateo Rivas"
+                  src={profileImage}
+                  alt="Yntyqbay Dinmukhammed"
                   fill
                   className="object-cover"
                   priority
@@ -27,10 +34,10 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-1.5">
                 <h1 className="text-[28px] font-semibold tracking-[-0.05em] leading-[1.2em] text-foreground">
-                  Mateo Rivas
+                  Yntyqbay Dinmukhammed
                 </h1>
                 <h2 className="text-[20px] font-normal tracking-[-0.02em] leading-[1.2em] text-secondary">
-                  Design Engineer at Typeform
+                  Junior+ Software Engineer · AI Full-Stack Developer
                 </h2>
               </div>
             </div>
@@ -39,55 +46,77 @@ export default function Home() {
           <Divider />
 
           {/* About */}
-          <Section title="About" gap="gap-4">
+          <Section id="about" title="About" gap="gap-4">
             <p className="text-[16px] font-normal tracking-[-0.01em] leading-[24px] text-secondary">
-              I’m a Design Engineer focused on crafting meaningful digital experiences where design meets code. With a strong front-end development and UX design background, I build scalable UI systems and contribute to user-centered products from concept to deployment.
+              Junior+ Software Engineer and AI-focused Full-Stack Developer with hands-on experience building RAG-based AI systems, leading multi-agent orchestration and analytics automation, and deploying cloud-native, production-ready apps. Proven ability to deliver measurable impact across startups and enterprise environments, serving 1000+ users, leading cross-functional teams, and shipping end-to-end AI products.
             </p>
           </Section>
 
           <Divider />
 
-          {/* Experience */}
-          <Section title="Experience" gap="gap-8">
-            <ExperienceEducation
-              logo="https://logo.clearbit.com/typeform.com"
-              positions={[
-                {
-                  title: "Design Engineer",
-                  company: "TYPEFORM",
-                  date: "2024-NOW",
-                  description: (
-                    <p>Spearheaded the revamp of Typeform’s Design System, working closely with both design and engineering teams.</p>
-                  ),
-                },
-              ]}
+          {/* Projects */}
+          <Section id="projects" title="Projects" gap="gap-8">
+            <Project
+              index={0}
+              title="OpenLab"
+              href="https://openlab-five.vercel.app/"
+              description="A free digital incubator program for early-stage founders and innovators worldwide, offering 1:1 mentoring in a competitive, growth-driven environment."
             />
+            <Project
+              index={1}
+              title="Lirix.ai"
+              href="https://lirix-front.vercel.app/"
+              description="No-code platform for building RAG-based AI chatbots. Stack: Next.js, FastAPI, PostgreSQL, LangGraph, Qdrant, Supabase, Docker, Vercel."
+            />
+            <Project
+              index={2}
+              title="QuokkaAI"
+              href="https://quokkaai.site"
+              description="AI-agent-based analytics platform generating automated charts, insights, and reports for 1000+ users and B2B clients."
+            />
+            <Project
+              index={3}
+              title="Axel"
+              href="https://www.tryaxel.app"
+              description="Node-based workflow creation and AI video generation platform for creators. Orchestrated embedding models and state-handling agents to create consistent characters and videos."
+            />
+          </Section>
+
+          <Divider />
+
+          {/* Experience */}
+          <Section id="experience" title="Experience" gap="gap-8">
             <ExperienceEducation
-              logo="https://logo.clearbit.com/framer.com"
+              logo={chocoLogo}
               positions={[
                 {
-                  title: "Marketplace Lead at Framer",
-                  company: "FRAMER",
-                  date: "2022-2025",
+                  title: "Junior+ Software Engineer",
+                  company: "CHOCO HOLDING",
+                  date: "Aug 2025 – Present",
                   description: (
                     <ul className="list-disc pl-4 space-y-2">
-                      <li>Built accessible, themeable UI components using <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Styled Components</strong>.</li>
-                      <li>Introduced a <strong>token-based styling architecture</strong> integrated with Figma and Storybook.</li>
-                      <li>Collaborated with product squads to deliver high-impact user experiences across web platforms.</li>
+                      <li>Leading a delivery team of 1 backend engineer and 2 DevOps engineers.</li>
+                      <li>Designing and developing a CRM-like BI analytics platform as a new internal product.</li>
+                      <li>Led Freedom AI Analysis, a multi-agent AI system automating insights and report generation.</li>
+                      <li>Serving 1000+ users and reducing manual analytics time by 70%.</li>
                     </ul>
                   ),
                 },
               ]}
             />
             <ExperienceEducation
-              logo="https://logo.clearbit.com/spotify.com"
+              logo={enactusLogo}
               positions={[
                 {
-                  title: "Frontend Intern",
-                  company: "SPOTIFY",
-                  date: "2021-2022",
+                  title: "Team Lead",
+                  company: "ENACTUS NIS TARAZ",
+                  date: "2024 – 2025",
                   description: (
-                    <p>Joined the Premium team as a frontend intern, supporting UI development with React and CSS. Collaborated with designers to implement responsive components and participated in accessibility testing. This was my first hands-on experience bridging design and code in a global tech environment.</p>
+                    <ul className="list-disc pl-4 space-y-2">
+                      <li>Led student engineering teams building technology-driven social impact startups.</li>
+                      <li>Developed SmartKoz, a computer-vision bullying detection system.</li>
+                      <li>Integrated into 2 schools with 0.95 detection accuracy.</li>
+                    </ul>
                   ),
                 },
               ]}
@@ -99,27 +128,34 @@ export default function Home() {
           {/* Education */}
           <Section title="Education" gap="gap-8">
             <ExperienceEducation
-              logo="https://logo.clearbit.com/elisava.net"
+              logo={nfactorialLogo}
               positions={[
                 {
-                  title: "Postgraduate in User Experience Design",
-                  company: "ELISAVA",
-                  date: "2020-2021",
+                  title: "Full-Stack & AI Engineer",
+                  company: "NFACTORIAL INCUBATOR",
+                  date: "Jun 2025 – Aug 2025",
                   description: (
-                    <p>Specialized in UX strategy, user research, and prototyping. The program deepened my ability to design user-centered products and aligned perfectly with my transition into frontend and design engineering roles.</p>
+                    <ul className="list-disc pl-4 space-y-2">
+                      <li>Focus: Applied AI engineering, full-stack development, cloud infrastructure.</li>
+                      <li>Capstone: Built QuokkaAI, an AI-driven data analytics automation platform.</li>
+                      <li>Impact: 1000+ users, 2 B2B clients, and $1000+ revenue from production usage.</li>
+                    </ul>
                   ),
                 },
               ]}
             />
             <ExperienceEducation
-              logo="https://logo.clearbit.com/url.edu"
+              logo={nisLogo}
               positions={[
                 {
-                  title: "Bachelor's Degree in Multimedia Design",
-                  company: "UNIVERSITAT RAMON LLULL",
-                  date: "2016-2020",
+                  title: "High School Student",
+                  company: "NAZARBAYEV INTELLECTUAL SCHOOL OF TARAZ",
+                  date: "2021 – 2027",
                   description: (
-                    <p>Focused on interaction design, web development, and digital interfaces. This program gave me the foundation to understand both the visual and technical aspects of digital products.</p>
+                    <ul className="list-disc pl-4 space-y-2">
+                      <li>GPA: 5.0 / 5.0</li>
+                      <li>Honors: Computer Science Olympiad Gold; Infomatrix Asia 2025 Gold; 1st place in 15+ hackathons.</li>
+                    </ul>
                   ),
                 },
               ]}
@@ -131,23 +167,13 @@ export default function Home() {
           {/* Certifications */}
           <Section title="Certifications" gap="gap-8">
             <Certification
-              logo="https://logo.clearbit.com/coursera.org"
-              title="Advanced Front-End Web Development with React"
-              provider="COURSERA"
+              logo={nfactorialLogo}
+              title="Full-Stack & AI Engineer"
+              provider="NFACTORIAL INCUBATOR"
               date="2025"
-              href="https://www.coursera.org/"
+              href="https://nfactorial.school/"
               description={
-                <p>An in-depth certification covering React 18+, Next.js, TypeScript, GraphQL, performance optimization, accessibility standards (WCAG 2.2), and Core Web Vitals for production-ready interfaces.</p>
-              }
-            />
-            <Certification
-              logo="https://logo.clearbit.com/interaction-design.org"
-              title="UX Design for Accessibility"
-              provider="INTERACTION DESIGN FOUNDATION"
-              date="2024"
-              href="https://www.coursera.org/"
-              description={
-                <p>Specialized course on designing inclusive digital experiences, focusing on WCAG compliance, semantic structure, keyboard navigation, screen reader testing, and inclusive UX research methodologies.</p>
+                <p>Certification for applied AI engineering, full-stack development, and cloud infrastructure through a production capstone.</p>
               }
             />
           </Section>
@@ -155,70 +181,58 @@ export default function Home() {
           <Divider />
 
           {/* Skills / Stack */}
-          <Section title="Skills / Stack" gap="gap-6">
+          <Section id="skills" title="Skills / Stack" gap="gap-6">
             <div className="flex flex-wrap gap-2.5">
-              {["React", "Typescript", "Next.js", "Tailwind CSS", "GraphQL", "WCAG 2.2"].map((skill) => (
+              {[
+                "Python",
+                "TypeScript",
+                "JavaScript",
+                "Go",
+                "RAG",
+                "LLM Agents",
+                "LangChain",
+                "LangGraph",
+                "React",
+                "Next.js",
+                "Vue",
+                "Nuxt",
+                "FastAPI",
+                "PostgreSQL",
+                "MongoDB",
+                "Redis",
+                "SQLite",
+                "Qdrant",
+                "Docker",
+                "AWS",
+                "GCP",
+                "Linux",
+                "Nginx",
+                "CI/CD",
+                "OAuth",
+                "JWT",
+              ].map((skill) => (
                 <SkillPill key={skill} name={skill} />
               ))}
-            </div>
-
-            <Divider className="my-4" />
-
-            <div className="flex flex-wrap gap-6 items-center">
-              {[
-                { name: "Framer", domain: "framer.com" },
-                { name: "Figma", domain: "figma.com" },
-                { name: "Arc", domain: "arc.net" },
-                { name: "Raycast", domain: "raycast.com" },
-                { name: "Cursor", domain: "cursor.com" },
-                { name: "ChatGPT", domain: "openai.com" },
-                { name: "GitHub", domain: "github.com" },
-                { name: "Stripe", domain: "stripe.com" },
-                { name: "Superhuman", domain: "superhuman.com" },
-                { name: "Spotify", domain: "spotify.com" },
-              ].map((tool) => (
-                <div key={tool.name} className="relative w-10 h-10 grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100" title={tool.name}>
-                  <Image
-                    src={`https://logo.clearbit.com/${tool.domain}`}
-                    alt={tool.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </Section>
-
-          <Divider />
-
-          {/* Languages */}
-          <Section title="Languages" gap="gap-8">
-            <div className="w-full flex flex-col gap-4">
-              <div className="flex justify-between w-full">
-                <span className="text-[16px] font-medium tracking-[-0.02em] leading-[24px] text-foreground">Spanish</span>
-                <span className="text-[16px] font-normal tracking-[-0.01em] leading-[24px] text-secondary">Native</span>
-              </div>
-              <div className="flex justify-between w-full">
-                <span className="text-[16px] font-medium tracking-[-0.02em] leading-[24px] text-foreground">English</span>
-                <span className="text-[16px] font-normal tracking-[-0.01em] leading-[24px] text-secondary">Fluent</span>
-              </div>
             </div>
           </Section>
 
           <Divider />
 
           {/* Contact */}
-          <Section title="Contact" gap="gap-8">
+          <Section id="contact" title="Contact" gap="gap-8">
             <div className="w-full flex flex-col gap-4">
-              <SocialLink label="Email" value="mateorivas@email.com" href="mailto:mateorivas@email.com" />
-              <SocialLink label="LinkedIn" value="/in/mateorivas" href="https://linkedin.com/in/mateorivas" />
-              <SocialLink label="X/Twitter" value="@mateorivas" href="https://x.com/mateorivas" />
+              <SocialLink label="Email" value="dinmuhamedyntykbaj@gmail.com" href="mailto:dinmuhamedyntykbaj@gmail.com" />
+              <SocialLink label="Phone" value="+7 747 399 42 93" href="tel:+77473994293" />
+              <SocialLink label="LinkedIn" value="linkedin.com" href="https://linkedin.com" />
+              <SocialLink label="GitHub" value="github.com" href="https://github.com" />
             </div>
           </Section>
 
           <Divider />
         </div>
       </div>
+      
+      <CVNavbar />
     </main>
   );
 }

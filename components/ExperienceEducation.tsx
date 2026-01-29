@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface Position {
   title: string;
@@ -9,7 +9,7 @@ interface Position {
 }
 
 interface ExperienceEducationProps {
-  logo?: string;
+  logo?: string | StaticImageData;
   positions: Position[];
 }
 
@@ -17,13 +17,13 @@ export function ExperienceEducation({ logo, positions }: ExperienceEducationProp
   return (
     <div className="flex gap-3">
       {/* Logo Column */}
-      <div className="flex flex-col items-center w-8 shrink-0">
+      <div className="flex flex-col items-center w-12 shrink-0">
         {logo ? (
-          <div className="relative w-8 h-8 rounded-none overflow-hidden bg-gray-100 mb-2">
-             <Image src={logo} alt="Company Logo" fill className="object-cover" />
+          <div className="relative w-12 h-12 rounded-none overflow-hidden bg-white mb-2 p-1">
+             <Image src={logo} alt="Company Logo" fill className="object-contain" />
           </div>
         ) : (
-           <div className="w-8 h-8 bg-gray-200 rounded-none mb-2" />
+           <div className="w-12 h-12 bg-gray-200 rounded-none mb-2" />
         )}
         {/* Line - Dashed Border */}
         <div className="w-[1px] border-l border-dashed border-border-dashed flex-grow h-full min-h-[20px]" />
